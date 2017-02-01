@@ -46,7 +46,7 @@ func Parse(envPrefix string, spec interface{}) (parseCount int, err error) {
 	for i := 0; i < s.NumField(); i++ {
 		f := s.Field(i)
 		if f.CanSet() {
-			alt := typeOfSpec.Field(i).Tag.Get("vudou")
+			alt := typeOfSpec.Field(i).Tag.Get("envconf")
 			fieldName := typeOfSpec.Field(i).Name
 			if alt != "" {
 				fieldName = alt
